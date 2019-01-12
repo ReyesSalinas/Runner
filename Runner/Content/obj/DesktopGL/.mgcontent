@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>HiDef</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/deathnell/source/repos/Runner/Runner/Content/images/entityOne.jpg</File>
+    <File>C:/Users/deathnell/source/repos/Runner/Runner/Content/images/SomeImage.png</File>
+    <File>C:/Users/deathnell/source/repos/Runner/Runner/Content/images/slime.png</File>
+    <File>C:/Users/deathnell/source/repos/Runner/Runner/Content/maps/square.png</File>
+    <File>C:/Users/deathnell/source/repos/Runner/Runner/Content/maps/TiledMap.tmx</File>
+  </SourceFiles>
+</SourceFileCollection>

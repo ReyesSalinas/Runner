@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="19">
+ <tileset firstgid="1" source="Square.tsx"/>
+ <objectgroup id="2" name="objects">
+  <object id="8" name="spawn" x="256.941" y="62.9981" width="32" height="32"/>
+ </objectgroup>
+ <layer id="1" name="main" width="20" height="15">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,
+1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,
+1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,1,
+1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,
+1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,1,
+1,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,1,
+1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,
+1,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,1,
+1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <objectgroup id="4" name="slimeNode">
+  <object id="10" name="SlimeH" x="300.023" y="357.01" width="32" height="32"/>
+  <object id="12" name="slimeF" x="45.5393" y="285.874" width="32" height="32"/>
+  <object id="13" name="slimeB" x="351.12" y="126.572" width="32" height="32"/>
+  <object id="14" name="slimeG" x="94.6326" y="383.059" width="32" height="32"/>
+  <object id="15" name="slimeE" x="141.722" y="228.766" width="32" height="32"/>
+  <object id="16" name="slimeD" x="541.482" y="343.985" width="32" height="32"/>
+  <object id="17" name="slimeC" x="456.32" y="195.703" width="32" height="32"/>
+  <object id="18" name="slimeA" x="538.476" y="52.4308" width="32" height="32"/>
+ </objectgroup>
+</map>
