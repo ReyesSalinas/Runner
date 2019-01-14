@@ -7,7 +7,7 @@ using Runner.Player;
 namespace Runner
 {
     class MasterScene : Scene
-    {
+    {        
         public override void initialize()
         {
             clearColor = Color.LightGray;

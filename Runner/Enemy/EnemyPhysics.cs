@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,15 +16,18 @@ namespace Runner.Enemy
     {
         private readonly float _moveSpeed = 150;
         private TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
-        private Vector2 node;
-        public void Initialize(EnemyController enemyController)
+        private Vector2 node =>  new Vector2(80, 405);
+        public void Initialize()
         {
-        }
-
+            
+        }               
         public void Update(EnemyController controller)
         {                  
-            var velocity = GetTotalVelocity(controller);
-            controller.Mover.move(velocity * Time.deltaTime, controller.BoxCollider, _collisionState);            
+            
+            SetEnemyDirection(controller);
+            var deltaMovement = GetTotalVelocity(controller) * Time.deltaTime;
+            deltaMovement = GetAdjustedDistanceWithCollision(controller.BoxCollider, deltaMovement);
+            controller.Mover.move(deltaMovement, controller.BoxCollider, _collisionState);            
         }
 
         public Vector2 GetTotalVelocity(EnemyController controller)
@@ -31,11 +35,22 @@ namespace Runner.Enemy
             return controller.Velocity * _moveSpeed;
         }
 
-      
-//        void MoveToNode()
-//        {
-//            node
-//        }
+        Vector2 GetAdjustedDistanceWithCollision(BoxCollider boxCollider, Vector2 distance)
+        {
+            return  new Vector2();
+        }
+        void SetEnemyDirection(EnemyController controller)
+        {
+            var entityPosition  = controller.BoxCollider.entity.position;
+            if (node.X > entityPosition.X)
+                controller.Velocity.X = 1;
+            if(node.X < entityPosition.X)
+                controller.Velocity.X = -1;
+            if (node.Y > entityPosition.Y)
+                controller.Velocity.Y = 1;
+            if (node.Y < entityPosition.Y)
+                controller.Velocity.Y = -1;
+        }
        
 
     }

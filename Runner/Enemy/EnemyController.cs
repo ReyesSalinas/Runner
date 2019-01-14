@@ -22,7 +22,8 @@ namespace Runner.Enemy
         {
             Mover = this.getComponent<TiledMapMover>();
             BoxCollider = entity.getComponent<BoxCollider>();
-            Physics.Initialize(this);
+            var nodManager = entity.getComponent<NodeManager>();
+            Physics.Initialize();
         }
 
         public void update()

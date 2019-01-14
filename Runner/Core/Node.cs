@@ -11,31 +11,31 @@ namespace Runner.Core
 {
     public class Node
     {
-        public List<Node> ConnectedNodes => new List<Node>();
+        public List<int> ConnectedNodes => new List<int>();
         public TiledObject Attributes;
 
         public Node(TiledObject node)
         {
-
+            Attributes = node;
         }
 
-        public Node(TiledObject node, List<Node> connectedNodes)
+        public Node(TiledObject node, List<int> connectedNodes)
         {
             Attributes = node;
             ConnectedNodes.AddRange(connectedNodes);
         }
 
-        public void AddConnectedNode(Node node)
+        public void AddConnectedNode(int node)
         {
             ConnectedNodes.Add(node);
         }
 
-        public void AddConnectedNodes(IEnumerable<Node> nodes)
+        public void AddConnectedNodes(IEnumerable<int> nodes)
         {
             ConnectedNodes.AddRange(nodes);
         }
 
-        public Node GetConnectedNode()
+        public int GetConnectedNode()
         {
             var nodeIndex = new Random(GetHashCode()).Next(0, ConnectedNodes.Count - 1);
             return ConnectedNodes[nodeIndex];
