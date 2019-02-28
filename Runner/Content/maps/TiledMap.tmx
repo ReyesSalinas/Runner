@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="19">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="22">
  <tileset firstgid="1" source="Square.tsx"/>
  <objectgroup id="2" name="objects">
   <object id="8" name="spawn" x="97.6383" y="84.0381" width="32" height="32"/>
@@ -9,55 +9,30 @@
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
 1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
-1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,
-1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,
+1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,
+1,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,
 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
-1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,1,
-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,
-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,1,
+1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,1,
+1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,
 1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,1,
 1,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,1,
-1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,
-1,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,1,
+1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,
+1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,
 1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 </data>
  </layer>
  <objectgroup id="4" name="slimeNode">
-  <object id="10" name="SlimeG" x="300.023" y="357.01" width="32" height="32">
-   <properties>
-    <property name="ConnectedNodes" value="14"/>
-   </properties>
-  </object>
-  <object id="13" name="slimeB" x="258.945" y="76.4765" width="32" height="32">
-   <properties>
-    <property name="ConnectedNodes" value="15,17,18"/>
-   </properties>
-  </object>
-  <object id="14" name="slimeF" x="80.606" y="405.101" width="32" height="32">
-   <properties>
-    <property name="ConnectedNodes" value="10,15"/>
-   </properties>
-  </object>
-  <object id="15" name="slimeE" x="113.669" y="214.739" width="32" height="32">
-   <properties>
-    <property name="ConnectedNodes" value="13,14"/>
-   </properties>
-  </object>
-  <object id="16" name="slimeD" x="532.464" y="385.063" width="32" height="32">
-   <properties>
-    <property name="ConnectedNodes" value="17"/>
-   </properties>
-  </object>
-  <object id="17" name="slimeC" x="417.246" y="206.724" width="32" height="32">
-   <properties>
-    <property name="ConnectedNodes" value="13,16,18"/>
-   </properties>
-  </object>
-  <object id="18" name="slimeA" x="538.476" y="52.4308" width="32" height="32">
-   <properties>
-    <property name="ConnectedNodes" value="13,17"/>
-   </properties>
-  </object>
+  <object id="10" name="SlimeG" x="152.915" y="198.539" width="32" height="32"/>
+  <object id="13" name="slimeB" x="387.189" y="49.4251" width="32" height="32"/>
+  <object id="14" name="slimeF" x="549.497" y="357.01" width="32" height="32"/>
+  <object id="15" name="slimeE" x="206.846" y="51.4287" width="32" height="32"/>
+  <object id="16" name="slimeD" x="326.072" y="169.654" width="32" height="32"/>
+  <object id="17" name="slimeC" x="463.334" y="204.72" width="32" height="32"/>
+  <object id="18" name="slimeA" x="541.482" y="51.4289" width="32" height="32"/>
+  <object id="19" name="SlimeH" x="64.7475" y="303.739" width="32" height="32"/>
+  <object id="20" name="SlimeI" x="143.898" y="396.916" width="32" height="32"/>
+  <object id="21" name="SlimeJ" x="301.197" y="367.861" width="32" height="32"/>
  </objectgroup>
 </map>

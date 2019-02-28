@@ -1,0 +1,64 @@
+{
+  "node": [
+    {
+      "id": 1,
+      "name": "slimeA",
+      "connectedNodes": [ 2, 3 ],
+      "weight": 9
+    },
+    {
+      "id": 2,
+      "name": "slimeB",
+      "connectedNodes": [ 1, 5 ],
+      "weight": 9
+    },
+    {
+      "id":3,
+      "name": "slimeC",
+      "connectedNodes": [ 1, 4, 6 ],
+      "weight": 9
+    },
+    {
+      "id": 4,
+      "name": "slimeD",
+      "connectedNodes": [ 3, 5 ],
+      "weight": 9
+    },
+    {
+      "id": 5,
+      "name": "slimeE",
+      "connectedNodes": [ 2, 4, 7 ],
+      "weight": 9
+    },
+    {
+      "id": 6,
+      "name": "slimeF",
+      "connectedNodes": [ 3 ],
+      "weight": 9
+    },
+    {
+      "id": 7,
+      "name": "slimeG",
+      "connectedNodes": [ 5, 8, 9 ],
+      "weight": 9
+    },
+    {
+      "id": 8,
+      "name": "slimeH",
+      "connectedNodes": [ 7, 9 ],
+      "weight": 9
+    },
+    {
+      "id": 9,
+      "name": "slimeI",
+      "connectedNodes": [ 7, 8, 10 ],
+      "weight": 9
+    },
+    {
+      "id": 10,
+      "name": "slimeJ",
+      "connectedNodes": [ 9 ],
+      "weight": 9
+    }
+  ]
+}

@@ -13,6 +13,7 @@ namespace Runner
         {
             IsMouseVisible = true;
             Window.AllowUserResizing = true;
+            
         }
 
         protected override void Initialize()

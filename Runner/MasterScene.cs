@@ -10,6 +10,7 @@ namespace Runner
     {        
         public override void initialize()
         {
+            
             clearColor = Color.LightGray;
             addRenderer(new DefaultRenderer());
             var tiledMap = content.Load<TiledMap>("maps/TiledMap");
@@ -24,14 +25,14 @@ namespace Runner
             player.addComponent(new PrototypeSprite(32, 32)).setColor(Color.Red);
             player.addComponent<PlayerController>();
             player.addComponent(new TiledMapMover(tiledMap.getLayer<TiledTileLayer>("main")));
-            player.addComponent(new BoxCollider(32,32));
+            player.addComponent(new BoxCollider(-16,-16,32,32));
 
             var enemy = createEntity("enemy");
-            enemy.transform.setPosition(320, 320);
+            enemy.transform.setPosition(300, 357);
             enemy.addComponent(new PrototypeSprite(32, 32)).setColor(Color.Purple);
             enemy.addComponent<EnemyController>();
             enemy.addComponent(new TiledMapMover(tiledMap.getLayer<TiledTileLayer>("main")));
-            enemy.addComponent(new BoxCollider(32,32));
+            enemy.addComponent(new BoxCollider(-16,-16,32,32));
         }
     }
 }

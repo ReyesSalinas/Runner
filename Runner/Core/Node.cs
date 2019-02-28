@@ -11,17 +11,20 @@ namespace Runner.Core
 {
     public class Node
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
         public List<int> ConnectedNodes => new List<int>();
+        public int Weight { get; set; }
         public TiledObject Attributes;
 
-        public Node(TiledObject node)
+        public Node(TiledObject tile)
         {
-            Attributes = node;
+            Attributes = tile;
         }
 
-        public Node(TiledObject node, List<int> connectedNodes)
+        public Node(TiledObject tile, List<int> connectedNodes)
         {
-            Attributes = node;
+            Attributes = tile;
             ConnectedNodes.AddRange(connectedNodes);
         }
 

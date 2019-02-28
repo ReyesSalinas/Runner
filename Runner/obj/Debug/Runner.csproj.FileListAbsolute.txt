@@ -60,3 +60,6 @@ C:\Runner\Runner\bin\DesktopGL\AnyCPU\Debug\Nez.pdb
 C:\Runner\Runner\bin\DesktopGL\AnyCPU\Debug\Nez.xml
 C:\Runner\Runner\bin\DesktopGL\AnyCPU\Debug\Nez.dll.config
 C:\Runner\Runner\obj\Debug\Runner.csproj.CopyComplete
+C:\Runner\Runner\bin\DesktopGL\AnyCPU\Debug\Newtonsoft.Json.dll
+C:\Runner\Runner\bin\DesktopGL\AnyCPU\Debug\Newtonsoft.Json.pdb
+C:\Runner\Runner\bin\DesktopGL\AnyCPU\Debug\Newtonsoft.Json.xml
