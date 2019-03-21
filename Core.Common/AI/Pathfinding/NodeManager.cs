@@ -5,14 +5,19 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace Core.Common.AI.Pathfinding
 {
     public static class NodeManager
     {
-        public static Dictionary<string,List<Node>> NodeCollections => new Dictionary<string, List<Node>>();
+        public static Dictionary<string, List<Node>> NodeCollections;
 
+        static NodeManager() {
+            NodeCollections = new Dictionary<string, List<Node>>();
+            Initialize();    
+        }
         public static void Initialize()
         {
             
@@ -21,11 +26,16 @@ namespace Core.Common.AI.Pathfinding
             var files  = directory.GetFiles();
             foreach (FileInfo file in files)
             {
-                var json = JObject.Parse(@"../../data/nodes/slime");
-                var jArray = (JArray)json["Nodes"];
-                var nodeName = json["Name"].ToString();
-                var nodes = jArray.ToObject<List<Node>>();
-                NodeCollections.Add(nodeName,nodes);
+                
+                var jArray = JArray.Parse(File.ReadAllText(@file.FullName));
+                var nodes = new List<Node>();
+                foreach(var item in jArray)
+                {
+                    var node = JsonConvert.DeserializeObject<Node>(item.ToString());
+                    nodes.Add(node);
+                }
+                var name = Path.GetFileNameWithoutExtension(file.FullName);
+                NodeCollections.Add(name,nodes);                               
             }
         }
     }

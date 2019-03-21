@@ -28,3 +28,17 @@ C:\Runner\Core.Common\obj\Debug\Core.Common.csproj.CoreCompileInputs.cache
 C:\Runner\Core.Common\obj\Debug\Core.Common.csproj.CopyComplete
 C:\Runner\Core.Common\obj\Debug\Core.Common.dll
 C:\Runner\Core.Common\obj\Debug\Core.Common.pdb
+C:\Users\deathnell\Documents\Runner\Core.Common\bin\Debug\Core.Common.dll
+C:\Users\deathnell\Documents\Runner\Core.Common\bin\Debug\Core.Common.pdb
+C:\Users\deathnell\Documents\Runner\Core.Common\bin\Debug\Newtonsoft.Json.dll
+C:\Users\deathnell\Documents\Runner\Core.Common\bin\Debug\Nez.dll
+C:\Users\deathnell\Documents\Runner\Core.Common\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\deathnell\Documents\Runner\Core.Common\bin\Debug\Newtonsoft.Json.xml
+C:\Users\deathnell\Documents\Runner\Core.Common\bin\Debug\Nez.pdb
+C:\Users\deathnell\Documents\Runner\Core.Common\bin\Debug\Nez.xml
+C:\Users\deathnell\Documents\Runner\Core.Common\bin\Debug\Nez.dll.config
+C:\Users\deathnell\Documents\Runner\Core.Common\obj\Debug\Core.Common.csprojAssemblyReference.cache
+C:\Users\deathnell\Documents\Runner\Core.Common\obj\Debug\Core.Common.csproj.CoreCompileInputs.cache
+C:\Users\deathnell\Documents\Runner\Core.Common\obj\Debug\Core.Common.csproj.CopyComplete
+C:\Users\deathnell\Documents\Runner\Core.Common\obj\Debug\Core.Common.dll
+C:\Users\deathnell\Documents\Runner\Core.Common\obj\Debug\Core.Common.pdb

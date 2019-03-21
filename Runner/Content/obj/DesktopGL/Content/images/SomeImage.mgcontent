@@ -2,8 +2,8 @@
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/deathnell/Documents/Runner/Runner/Content/images/SomeImage.png</SourceFile>
   <SourceTime>2019-03-20T19:11:29.8682181-07:00</SourceTime>
-  <DestFile>C:/Users/deathnell/Documents/Runner/Runner/Content/bin/DesktopGL/images/SomeImage.xnb</DestFile>
-  <DestTime>2019-03-20T19:24:18.5421453-07:00</DestTime>
+  <DestFile>C:/Users/deathnell/Documents/Runner/Runner/Content/bin/DesktopGL/Content/images/SomeImage.xnb</DestFile>
+  <DestTime>2019-03-20T19:19:32.928134-07:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T08:35:54-08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

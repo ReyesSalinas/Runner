@@ -4,3 +4,14 @@ C:\Runner\Core.Data\obj\Debug\Core.Data.csprojAssemblyReference.cache
 C:\Runner\Core.Data\obj\Debug\Core.Data.csproj.CoreCompileInputs.cache
 C:\Runner\Core.Data\obj\Debug\Core.Data.dll
 C:\Runner\Core.Data\obj\Debug\Core.Data.pdb
+C:\Users\deathnell\Documents\Runner\Core.Data\bin\Debug\Core.Data.dll
+C:\Users\deathnell\Documents\Runner\Core.Data\bin\Debug\Core.Data.pdb
+C:\Users\deathnell\Documents\Runner\Core.Data\bin\Debug\Nez.dll
+C:\Users\deathnell\Documents\Runner\Core.Data\bin\Debug\Nez.pdb
+C:\Users\deathnell\Documents\Runner\Core.Data\bin\Debug\Nez.xml
+C:\Users\deathnell\Documents\Runner\Core.Data\bin\Debug\Nez.dll.config
+C:\Users\deathnell\Documents\Runner\Core.Data\obj\Debug\Core.Data.csprojAssemblyReference.cache
+C:\Users\deathnell\Documents\Runner\Core.Data\obj\Debug\Core.Data.csproj.CoreCompileInputs.cache
+C:\Users\deathnell\Documents\Runner\Core.Data\obj\Debug\Core.Data.csproj.CopyComplete
+C:\Users\deathnell\Documents\Runner\Core.Data\obj\Debug\Core.Data.dll
+C:\Users\deathnell\Documents\Runner\Core.Data\obj\Debug\Core.Data.pdb
