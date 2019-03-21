@@ -89,8 +89,8 @@ C:\Users\deathnell\Documents\Runner\Runner\bin\DesktopGL\AnyCPU\Debug\Newtonsoft
 C:\Users\deathnell\Documents\Runner\Runner\bin\DesktopGL\AnyCPU\Debug\Nez.pdb
 C:\Users\deathnell\Documents\Runner\Runner\bin\DesktopGL\AnyCPU\Debug\Nez.xml
 C:\Users\deathnell\Documents\Runner\Runner\bin\DesktopGL\AnyCPU\Debug\Nez.dll.config
-C:\Users\deathnell\Documents\Runner\Runner\obj\Debug\Runner.csprojAssemblyReference.cache
 C:\Users\deathnell\Documents\Runner\Runner\obj\Debug\Runner.csproj.CoreCompileInputs.cache
 C:\Users\deathnell\Documents\Runner\Runner\obj\Debug\Runner.csproj.CopyComplete
 C:\Users\deathnell\Documents\Runner\Runner\obj\Debug\Runner.exe
 C:\Users\deathnell\Documents\Runner\Runner\obj\Debug\Runner.pdb
+C:\Users\deathnell\Documents\Runner\Runner\obj\Debug\Runner.csprojAssemblyReference.cache

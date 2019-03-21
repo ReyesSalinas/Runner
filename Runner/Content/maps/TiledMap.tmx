@@ -33,6 +33,6 @@
   <object id="18" name="slimeA" x="541.482" y="51.4289" width="32" height="32"/>
   <object id="19" name="SlimeH" x="60.7475" y="267.739" width="32" height="32"/>
   <object id="20" name="SlimeI" x="111.898" y="399.916" width="32" height="32"/>
-  <object id="21" name="SlimeJ" x="302.197" y="376.861" width="32" height="32"/>
+  <object id="21" name="SlimeJ" x="302" y="384" width="32" height="32"/>
  </objectgroup>
 </map>

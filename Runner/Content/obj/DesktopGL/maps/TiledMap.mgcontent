@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/deathnell/Documents/Runner/Runner/Content/maps/TiledMap.tmx</SourceFile>
-  <SourceTime>2019-03-20T19:27:06.2111269-07:00</SourceTime>
+  <SourceTime>2019-03-20T21:06:43.7935296-07:00</SourceTime>
   <DestFile>C:/Users/deathnell/Documents/Runner/Runner/Content/bin/DesktopGL/maps/TiledMap.xnb</DestFile>
-  <DestTime>2019-03-20T19:27:09.806493-07:00</DestTime>
+  <DestTime>2019-03-20T21:08:48.6496085-07:00</DestTime>
   <Importer>TiledMapImporter</Importer>
   <ImporterTime>2018-09-27T04:56:14-07:00</ImporterTime>
   <Processor>TiledMapProcessor</Processor>

@@ -14,10 +14,10 @@ namespace Core.Common.AI.Pathfinding
     {
         public static Dictionary<string, List<Node>> NodeCollections;
 
-        static NodeManager() {
-            NodeCollections = new Dictionary<string, List<Node>>();
-            Initialize();    
-        }
+        //static NodeManager() {
+        //    NodeCollections = new Dictionary<string, List<Node>>();
+        //    Initialize();    
+        //}
         public static void Initialize()
         {
             
