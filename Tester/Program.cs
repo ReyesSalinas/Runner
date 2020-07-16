@@ -10,9 +10,9 @@ namespace Tester
     {
         static void Main(string[] args)
         {
-            NodeManager.Initialize();
+            
 
-            var nodes = NodeManager.NodeCollections.ToString();
+            var nodes = NodeManager.NodeCollections;
             Console.WriteLine(nodes);
 
             Console.ReadKey();

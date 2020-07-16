@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Common", "Core.Common\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csproj", "{C14FB2C9-3890-4806-9835-F7B79BA3CDFA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nez", "..\Nez\Nez.Portable\Nez.csproj", "{2611AAF7-2EBE-42FA-82B5-7A0B23A02132}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nez.PipelineImporter", "..\Nez\Nez.PipelineImporter\Nez.PipelineImporter.csproj", "{A2ADE5B3-A183-42F7-A56C-162DC6A385DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{C14FB2C9-3890-4806-9835-F7B79BA3CDFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C14FB2C9-3890-4806-9835-F7B79BA3CDFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C14FB2C9-3890-4806-9835-F7B79BA3CDFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2611AAF7-2EBE-42FA-82B5-7A0B23A02132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2611AAF7-2EBE-42FA-82B5-7A0B23A02132}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2611AAF7-2EBE-42FA-82B5-7A0B23A02132}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2611AAF7-2EBE-42FA-82B5-7A0B23A02132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2ADE5B3-A183-42F7-A56C-162DC6A385DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2ADE5B3-A183-42F7-A56C-162DC6A385DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2ADE5B3-A183-42F7-A56C-162DC6A385DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2ADE5B3-A183-42F7-A56C-162DC6A385DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

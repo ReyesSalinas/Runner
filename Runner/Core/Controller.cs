@@ -6,7 +6,7 @@ namespace Runner.Core
     public abstract class Controller : Component
     {
         public Vector2 Velocity;
-        public BoxCollider BoxCollider;
+        public BoxCollider _boxCollider;
         public TiledMapMover Mover;      
     }
     

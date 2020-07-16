@@ -12,10 +12,14 @@ namespace Core.Common.AI.Pathfinding
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<int> ConnectedNodes => new List<int>();
+        public List<int> ConnectedNodes;
         public int Weight { get; set; }
         public TiledObject Attributes;
+       
+        public Node()
+        {
 
+        }
         public Node(TiledObject tile)
         {
             Attributes = tile;

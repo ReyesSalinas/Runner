@@ -1,189 +1,156 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Nez;
 using Nez.Tiled;
-using Random = System.Random;
+using Runner.Core;
 
 namespace Runner.Enemy
 {
     public class EnemyPhysics
     {
-        private readonly float _moveSpeed = 50;
-        private TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
-        private Vector2 node => new Vector2(80, 405);
+        private readonly float _chasingSpeed = 96;
+        private readonly TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
+        private readonly float _normalSpeed = 32;
+        private CollisionResult _collisionResult;
+        private Node _currentMapNode;
+        private int _currentPathNode;
+        private NodeCollection _mapNodes;
+        private Vector2 _moveDir;
+        private float _moveSpeed = 32;
+        private List<Point> _pathNodes;
 
-        public void Initialize()
+        private Vector2 currentDestination => new Vector2(_pathNodes[_currentPathNode].X * 32 + 16,
+            _pathNodes[_currentPathNode].Y * 32 + 16);
+
+        public void initialize(EnemyController controller, List<Point> nodes)
         {
+            _mapNodes = controller.entity.scene.findEntity("node-collections").getComponent<NodeCollection>();
+            var spawn = _mapNodes.Nodes.randomItem();
+            controller.entity.transform.setPosition(spawn.Position);
+            _currentMapNode = spawn.GetNextNode();
+            setPath(controller);
         }
 
-        public void Update(EnemyController controller)
+        public void update(EnemyController controller)
         {
-            if (Vector2.Distance(controller.BoxCollider.entity.position, node) > 16)
+            if (controller.behavior == EnemyBehavior.Normal)
             {
-                SetEnemyDirection(controller);
-                var deltaMovement = GetTotalVelocity(controller) * Time.deltaTime;
+                if (_currentPathNode >= _pathNodes.Count)
+                {
+                    _currentPathNode = 0;
+                    setCurrentMapNode();
+                    setPath(controller);
+                }
+                setCurrentPathNode(controller._boxCollider.bounds);
+                setEnemyDirection(controller);
+            }
+
+            if (controller.behavior == EnemyBehavior.PlayerAggressive)
+            {
+                _pathNodes = controller.astarGridGraph.search((controller.entity.position / 32).ToPoint(),
+                    (getPlayerPosition(controller) / 32).ToPoint());
+                if (_currentPathNode >= _pathNodes.Count) _currentPathNode = 0;
+                setCurrentPathNode(controller._boxCollider.bounds);
+                setEnemyDirection(controller);
+            }
+
+            if (controller.behavior != EnemyBehavior.Attacking)
+            {
+                move(controller);
+            }
+            
+
+            updateBehavior(controller);
+        }
 
 
-                controller.Mover.move(deltaMovement, controller.BoxCollider, _collisionState);
+        public void setPath(EnemyController controller)
+        {
+            var path = controller.astarGridGraph.search(
+                (controller.entity.position / 32).ToPoint(),
+                _currentMapNode.TiledPosition);
+            _pathNodes = path;
+        }
+
+        public void move(EnemyController controller)
+        {
+            try
+            {
+                var deltaMovement = getTotalVelocity() * Time.deltaTime;
+                if (float.IsNaN(deltaMovement.X) || float.IsNaN(deltaMovement.Y))
+                {
+                    deltaMovement = Vector2.Zero;
+                    _currentPathNode++;
+                }
+                // if (controller.behavior == EnemyBehavior.PlayerAggressive)
+                //     controller._mover.move(deltaMovement, out _collisionResult);
+                // if (controller.behavior == EnemyBehavior.Normal)
+                controller.Mover.move(deltaMovement, controller._boxCollider, _collisionState);
+            }
+            catch (Exception e)
+            {
             }
         }
 
-
-        public Vector2 GetTotalVelocity(EnemyController controller)
+        public Vector2 getTotalVelocity()
         {
-            return controller.Velocity * _moveSpeed;
+            return _moveDir * _moveSpeed;
         }
 
-        Vector2 AdjustForCollision(EnemyController controller, Vector2 movement)
+        private void setCurrentPathNode(Rectangle rectangle)
         {
-            Edge edgeX = movement.X > 0f ? Edge.Right : Edge.Left;
-            Edge edgeY = movement.Y > 0f ? Edge.Bottom : Edge.Top;
-            var origin = controller.BoxCollider.entity.position;
-            var ray = new Vector2();
+            var hitPath = rectangle.Contains(currentDestination);
+            if (hitPath && _currentPathNode < _pathNodes.Count - 1) _currentPathNode++;
+        }
 
-            ray = new Vector2(0, -16);
-            var vector = new Vector2(origin.X + 16, origin.Y);
-            var top = Physics.linecast(vector, vector + ray);
+        private void setCurrentMapNode()
+        {
+            _currentMapNode = _currentMapNode.GetNextNode();
+        }
 
-            ray = new Vector2(0, 16);
-            vector = new Vector2(origin.X + 16, origin.Y + 32);
-            var bottom = Physics.linecast(vector, vector + ray);
+        private void setEnemyDirection(EnemyController controller)
+        {
+            var desiredVelocity = Vector2.Subtract(currentDestination, controller.entity.position);
+                desiredVelocity.Normalize();
+                _moveDir = desiredVelocity;
+        }
 
-            ray = new Vector2(16, 0);
-            vector = new Vector2(origin.X + 32, origin.Y + 16);
-            var right = Physics.linecast(vector, vector + ray);
 
-            ray = new Vector2(-16, 0);
-            vector = new Vector2(origin.X, origin.Y + 16);
-            var left = Physics.linecast(vector, vector + ray);
+        private void getNearestNode(Vector2 entityPosition)
+        {
+            _currentMapNode = _mapNodes
+                .Nodes
+                .OrderBy(
+                    x => Vector2.Distance(entityPosition, x.Position))
+                .FirstOrDefault();
+        }
 
-            ray = new Vector2(-4, -4);
-            vector = origin;
-            var topLeft = Physics.linecast(vector, vector + ray);
-
-            ray = new Vector2(4, -4);
-            vector = new Vector2(origin.X + 32, origin.Y);
-            var topRight = Physics.linecast(vector, vector + ray);
-
-            ray = new Vector2(-4, 4);
-            vector = new Vector2(origin.X, origin.Y + 32);
-            var bottomLeft = Physics.linecast(vector, vector + ray);
-
-            ray = new Vector2(4, 4);
-            vector = new Vector2(origin.X + 32, origin.Y + 32);
-            var bottomRight = Physics.linecast(vector, vector + ray);
-
-            if (edgeX == Edge.Left)
+        private void updateBehavior(EnemyController controller)
+        {
+            var distance = Vector2.Distance(controller.entity.position, getPlayerPosition(controller));
+            if (distance <= 32f && controller.behavior != EnemyBehavior.Attacking)
             {
-                if (left.collider != null && left.distance > 0)
-                {
-                    var position = controller.BoxCollider.entity.position;
-                    position.X = node.X;
-                    movement = node - position;
-                }
-                else if (edgeY == Edge.Top)
-                {
-                    if (top.collider != null || topRight.collider != null)
-                    {
-                        var position = controller.BoxCollider.entity.position;
-                        position.Y = node.Y;
-                        movement = node - position;
-                    }
-                    else if (bottomLeft.collider != null)
-                    {
-                        var position = controller.BoxCollider.entity.position;
-                        position.X = node.X;
-                        movement = node - position;
-                    }
-                }
-                else if (edgeY == Edge.Bottom)
-                {
-                    if (bottom.collider != null || bottomRight.collider != null)
-                    {
-                        var position = controller.BoxCollider.entity.position;
-                        position.Y = node.Y;
-                        movement = node - position;
-                    }
-
-                    if (topLeft.collider != null)
-                    {
-                        var position = controller.BoxCollider.entity.position;
-                        position.X = node.X;
-                        movement = node - position;
-                    }
-                }
+                controller.behavior = EnemyBehavior.Attacking;
             }
-
-            if (edgeX == Edge.Right)
+            if (distance >
+                32f && distance <= 96f && controller.behavior != EnemyBehavior.PlayerAggressive)
             {
-                if (right.collider != null && right.distance > 0)
-                {
-                    var position = controller.BoxCollider.entity.position;
-                    position.X = node.X;
-                    movement = node - position;
-                }
-                else if (edgeY == Edge.Top)
-                {
-                    if (top.collider != null || topLeft.collider != null)
-                    {
-                        var position = controller.BoxCollider.entity.position;
-                        position.Y = node.Y;
-                        movement = node - position;
-                    }
-                    else if (bottomRight.collider != null)
-                    {
-                        var position = controller.BoxCollider.entity.position;
-                        position.X = node.X;
-                        movement = node - position;
-                    }
-                }
-                else if (edgeY == Edge.Bottom)
-                {
-                    if (bottom.collider != null || bottomLeft.collider != null)
-                    {
-                        var position = controller.BoxCollider.entity.position;
-                        position.Y = node.Y;
-                        movement = node - position;
-                    }
-                    else if (topRight.collider != null)
-                    {
-                        var position = controller.BoxCollider.entity.position;
-                        position.X = node.X;
-                        movement = node - position;
-                    }
-                }
+                controller.behavior = EnemyBehavior.PlayerAggressive;
+                _currentPathNode = 0;
+                _moveSpeed = _chasingSpeed;
             }
-
-            return movement;
+            if (!(distance > 96f) || controller.behavior == EnemyBehavior.Normal) return;
+            controller.behavior = EnemyBehavior.Normal;
+            getNearestNode(controller.entity.position);
+            _currentPathNode = 0;
+            _moveSpeed = _normalSpeed;
         }
 
-        Vector2 AdjustDistance()
+        private Vector2 getPlayerPosition(EnemyController controller)
         {
-            var adjustedDistance = new Vector2();
-            if (_collisionState.above)
-                adjustedDistance.Y += 16;
-            if (_collisionState.below)
-                adjustedDistance.Y -= 16;
-            if (_collisionState.left)
-                adjustedDistance.X += 16;
-            if (_collisionState.right)
-                adjustedDistance.X -= 16;
-
-            return adjustedDistance;
-        }
-
-        void SetEnemyDirection(EnemyController controller)
-        {
-            var desiredVelocity = node - controller.BoxCollider.entity.position;            
-            //desiredVelocity = AdjustForCollision(controller, desiredVelocity);
-            desiredVelocity.Normalize();
-            controller.Velocity = desiredVelocity;
+            return controller.entity.scene.findEntity("player").position;
         }
     }
 }

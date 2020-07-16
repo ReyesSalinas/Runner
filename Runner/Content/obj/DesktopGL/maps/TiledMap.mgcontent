@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Runner/Runner/Content/maps/TiledMap.tmx</SourceFile>
-  <SourceTime>2019-01-17T01:19:35-06:00</SourceTime>
-  <DestFile>C:/Runner/Runner/Content/bin/DesktopGL/maps/TiledMap.xnb</DestFile>
-  <DestTime>2019-01-17T01:21:02.9521708-06:00</DestTime>
+  <SourceFile>C:/Code/Runner/Runner/Content/maps/TiledMap.tmx</SourceFile>
+  <SourceTime>2020-07-11T21:57:16.3293619-05:00</SourceTime>
+  <DestFile>C:/Code/Runner/Runner/Content/bin/DesktopGL/maps/TiledMap.xnb</DestFile>
+  <DestTime>2020-07-11T22:01:30.120496-05:00</DestTime>
   <Importer>TiledMapImporter</Importer>
-  <ImporterTime>2018-09-27T04:56:14-05:00</ImporterTime>
+  <ImporterTime>2020-07-09T10:22:06.3177433-05:00</ImporterTime>
   <Processor>TiledMapProcessor</Processor>
-  <ProcessorTime>2018-09-27T04:56:14-05:00</ProcessorTime>
+  <ProcessorTime>2020-07-09T10:22:06.3177433-05:00</ProcessorTime>
   <Dependencies />
   <BuildAsset />
   <BuildOutput />

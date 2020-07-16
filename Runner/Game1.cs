@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.Xna.Framework;
 using Nez;
 
 
@@ -20,8 +21,12 @@ namespace Runner
         {
             base.Initialize();
             Scene.setDefaultDesignResolution(640, 480, Scene.SceneResolutionPolicy.ShowAllPixelPerfect);
-            scene = new MasterScene();
-       
+            scene = new MasterScene();       
+        }
+
+        protected override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);           
         }
     }
 }

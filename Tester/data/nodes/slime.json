@@ -1,11 +1,10 @@
-{
-  "slime": [
-    {
-      "id": 1,
-      "name": "slimeA",
-      "connectedNodes": [ 2, 3 ],
-      "weight": 9
-    },
+[
+  {
+    "Id": 1,
+    "Name": "slimeA",
+    "ConnectedNodes": [ 2, 3 ],
+    "Weight": 9
+  },
     {
       "id": 2,
       "name": "slimeB",
@@ -54,11 +53,11 @@
       "connectedNodes": [ 7, 8, 10 ],
       "weight": 9
     },
-    {
-      "id": 10,
-      "name": "slimeJ",
-      "connectedNodes": [ 9 ],
-      "weight": 9
-    }
-  ]
-}
+  {
+    "id": 10,
+    "name": "slimeJ",
+    "connectedNodes": [ 9 ],
+    "weight": 9
+  }
+
+]

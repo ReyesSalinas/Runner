@@ -7,7 +7,7 @@ namespace Runner.Player
     public class PlayerPhysics
     {
         private readonly float _moveSpeed = 150;
-        private TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
+        private readonly TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
         
         public PlayerPhysics()
         {
@@ -20,11 +20,9 @@ namespace Runner.Player
             
         }
         public void Update(PlayerController player)
-        {           
-         
+        {                    
             player.Velocity = GetTotalVelocity(player.Velocity);
-            player.Mover.move(player.Velocity * Time.deltaTime,player.BoxCollider,_collisionState);
-            
+            player.Mover.move(player.Velocity * Time.deltaTime,player._boxCollider, _collisionState);           
         }
               
         private Vector2 GetTotalVelocity(Vector2 playerVelocity)
