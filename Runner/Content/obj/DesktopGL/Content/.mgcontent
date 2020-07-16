@@ -4,11 +4,11 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/deathnell/Documents/Runner/Runner/Content/images/entityOne.jpg</File>
-    <File>C:/Users/deathnell/Documents/Runner/Runner/Content/images/slime.png</File>
-    <File>C:/Users/deathnell/Documents/Runner/Runner/Content/images/SomeImage.png</File>
-    <File>C:/Users/deathnell/Documents/Runner/Runner/Content/maps/square.png</File>
-    <File>C:/Users/deathnell/Documents/Runner/Runner/Content/maps/TiledMap.tmx</File>
+    <File>C:/Code/Runner/Runner/Content/images/entityOne.jpg</File>
+    <File>C:/Code/Runner/Runner/Content/images/slime.png</File>
+    <File>C:/Code/Runner/Runner/Content/images/SomeImage.png</File>
+    <File>C:/Code/Runner/Runner/Content/maps/square.png</File>
+    <File>C:/Code/Runner/Runner/Content/maps/TiledMap.tmx</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

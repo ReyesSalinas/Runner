@@ -1,0 +1,37 @@
+﻿[
+  {
+    "Id": 1,
+    "ParentId": null,
+    "Name": "Slime",
+    "HitPoints": 100,
+    "MagicPoints": 10,
+    "Strength": [0, 0, 2, 5],
+    "Dexterity": [0, 0, 0, 0],
+    "Intelligence": [0, 0, 0, 0],
+    "Vitality": [1, 3, 5, 9],
+    "Agility": [0, 0, 0, 0],
+    "Luck": [0, 0, 0, 0],
+    "Items": [
+      {
+        "itemId": 1,
+        "dropChance": 0.509
+      },
+      {
+        "itemId": 15,
+        "dropChance": 0.20
+      },
+      {
+        "itemId": 25,
+        "dropChance": 0.10
+      },
+      {
+        "itemId": 35,
+        "dropChance": 0.05
+      },
+      {
+        "itemId": 100,
+        "dropChance": 0.005
+      }
+    ]
+  }
+]

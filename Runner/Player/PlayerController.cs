@@ -14,11 +14,10 @@ namespace Runner.Player
 {
     public class PlayerController : Controller, IUpdatable
     {
-        
-        
         private PlayerPhysics Physics => new PlayerPhysics();
-        private PlayerInput Input => new PlayerInput();       
-     
+        private PlayerInput Input => new PlayerInput();
+        public static Vector2 currentPosition;
+
         public PlayerController()
         {
             
@@ -27,8 +26,9 @@ namespace Runner.Player
         public override void onAddedToEntity()
         {
             Mover = this.getComponent<TiledMapMover>();
-            BoxCollider = entity.getComponent<BoxCollider>();
+            _boxCollider = entity.getComponent<BoxCollider>();
             Physics.Initialize(this);
+            currentPosition = entity.position;
         }
 
          
@@ -37,6 +37,7 @@ namespace Runner.Player
         {
             Input.Update(this);
             Physics.Update(this);
+            currentPosition = entity.position;
         }
 
     }

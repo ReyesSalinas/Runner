@@ -1,30 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Nez;
-using Newtonsoft.Json;
+using Nez.Tiled;
+
 namespace Runner.Core
 {
-    public class NodeCollection
+    public class NodeCollection : Component
     {
-        public List<Node> Nodes => new List<Node>();
+        public List<Node> Nodes = new List<Node>();
+
+        public NodeCollection(TiledObjectGroup tiledGroup)
+        {
+            Name = tiledGroup.name;
+            TiledObjectGroup = tiledGroup;
+        }
+
+        private TiledObjectGroup TiledObjectGroup { get; }
         public string Name { get; set; }
-        public NodeCollection()
-        {
 
+        public override void onAddedToEntity()
+        {
+            var tiledObjects = TiledObjectGroup
+                .objects
+                .Select(tiledObject => new Node(tiledObject));
+            AddRange(tiledObjects);
         }
 
-        public NodeCollection(string fileName)
+        public void Add(Node node)
         {
-
+            node.NodeCollection = this;
+            Nodes.Add(node);
         }
 
-        public void JSONToObject(string fileName)
+        public void AddRange(IEnumerable<Node> nodes)
         {
-            var json = new StreamReader(fileName).ReadToEnd();
+            foreach (var node in nodes) Add(node);
         }
     }
 }

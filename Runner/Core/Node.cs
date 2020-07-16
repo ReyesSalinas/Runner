@@ -1,50 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 using Nez;
 using Nez.Tiled;
-using Random = System.Random;
 
 namespace Runner.Core
 {
     public class Node
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public List<int> ConnectedNodes => new List<int>();
-        public int Weight { get; set; }
         public TiledObject Attributes;
 
         public Node(TiledObject tile)
         {
-            Attributes = tile;
+            Id = tile.id;
+            Position = tile.position;
+            Name = tile.name;
+            ConnectedNodes = tile.properties["ConnectedNodes"]
+                .Split(',')
+                .Select(int.Parse)
+                .ToList();
         }
 
-        public Node(TiledObject tile, List<int> connectedNodes)
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public Vector2 Position { get; set; }
+        public NodeCollection NodeCollection { get; set; }
+        public List<int> ConnectedNodes { get; set; }
+
+        public int Weight { get; set; }
+
+        public Point TiledPosition => (Position / 32).ToPoint();
+
+        public Node GetNextNode()
         {
-            Attributes = tile;
-            ConnectedNodes.AddRange(connectedNodes);
+            var nextNodeName = ConnectedNodes.randomItem();
+            return NodeCollection.Nodes.FirstOrDefault(x => x.Id == nextNodeName);
         }
-
-        public void AddConnectedNode(int node)
-        {
-            ConnectedNodes.Add(node);
-        }
-
-        public void AddConnectedNodes(IEnumerable<int> nodes)
-        {
-            ConnectedNodes.AddRange(nodes);
-        }
-
-        public int GetConnectedNode()
-        {
-            var nodeIndex = new Random(GetHashCode()).Next(0, ConnectedNodes.Count - 1);
-            return ConnectedNodes[nodeIndex];
-        }
-         
-
-
     }
 }

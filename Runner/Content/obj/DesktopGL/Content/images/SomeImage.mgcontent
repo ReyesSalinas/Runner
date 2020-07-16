@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/deathnell/Documents/Runner/Runner/Content/images/SomeImage.png</SourceFile>
-  <SourceTime>2019-03-20T19:11:29.8682181-07:00</SourceTime>
-  <DestFile>C:/Users/deathnell/Documents/Runner/Runner/Content/bin/DesktopGL/Content/images/SomeImage.xnb</DestFile>
-  <DestTime>2019-03-20T19:19:32.928134-07:00</DestTime>
+  <SourceFile>C:/Code/Runner/Runner/Content/images/SomeImage.png</SourceFile>
+  <SourceTime>2019-03-20T21:11:29.8682181-05:00</SourceTime>
+  <DestFile>C:/Code/Runner/Runner/Content/bin/DesktopGL/Content/images/SomeImage.xnb</DestFile>
+  <DestTime>2020-07-09T10:22:06.9674706-05:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2018-12-08T08:35:54-08:00</ImporterTime>
+  <ImporterTime>2018-12-08T10:35:54-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2018-12-08T08:35:54-08:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T10:35:54-06:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>

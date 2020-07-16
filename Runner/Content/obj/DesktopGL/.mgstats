@@ -1,6 +1,6 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/deathnell/Documents/Runner/Runner/Content/images/entityOne.jpg","C:/Users/deathnell/Documents/Runner/Runner/Content/bin/DesktopGL/images/entityOne.xnb","TextureProcessor","Texture2DContent",34646,1353685,0.1546029
-"C:/Users/deathnell/Documents/Runner/Runner/Content/images/slime.png","C:/Users/deathnell/Documents/Runner/Runner/Content/bin/DesktopGL/images/slime.xnb","TextureProcessor","Texture2DContent",1578,49237,0.0139798
-"C:/Users/deathnell/Documents/Runner/Runner/Content/images/SomeImage.png","C:/Users/deathnell/Documents/Runner/Runner/Content/bin/DesktopGL/images/SomeImage.xnb","TextureProcessor","Texture2DContent",283600,1635601,0.049867
-"C:/Users/deathnell/Documents/Runner/Runner/Content/maps/square.png","C:/Users/deathnell/Documents/Runner/Runner/Content/bin/DesktopGL/maps/square.xnb","TextureProcessor","Texture2DContent",105,4181,0.0049868
-"C:/Users/deathnell/Documents/Runner/Runner/Content/maps/TiledMap.tmx","C:/Users/deathnell/Documents/Runner/Runner/Content/bin/DesktopGL/maps/TiledMap.xnb","TiledMapProcessor","TmxMap",2015,2870,0.1813978
+"C:/Code/Runner/Runner/Content/images/entityOne.jpg","C:/Code/Runner/Runner/Content/bin/DesktopGL/images/entityOne.xnb","TextureProcessor","Texture2DContent",34646,1353685,0.4075575
+"C:/Code/Runner/Runner/Content/images/slime.png","C:/Code/Runner/Runner/Content/bin/DesktopGL/images/slime.xnb","TextureProcessor","Texture2DContent",1578,49237,0.0179339
+"C:/Code/Runner/Runner/Content/images/SomeImage.png","C:/Code/Runner/Runner/Content/bin/DesktopGL/images/SomeImage.xnb","TextureProcessor","Texture2DContent",283600,1635601,0.0688162
+"C:/Code/Runner/Runner/Content/maps/square.png","C:/Code/Runner/Runner/Content/bin/DesktopGL/maps/square.xnb","TextureProcessor","Texture2DContent",105,4181,0.0119675
+"C:/Code/Runner/Runner/Content/maps/TiledMap.tmx","C:/Code/Runner/Runner/Content/bin/DesktopGL/maps/TiledMap.xnb","TiledMapProcessor","TmxMap",3027,3136,0.1117175
